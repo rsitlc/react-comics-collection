@@ -1,0 +1,14 @@
+.drawer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_link {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+}
+.nav_link:hover {
+    cursor: pointer;
+    color: #16c79a;
+}
