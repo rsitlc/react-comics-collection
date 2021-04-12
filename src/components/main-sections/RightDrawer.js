@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button, Drawer } from "antd";
 import { AppstoreTwoTone, CloseCircleFilled } from "@ant-design/icons";
+
+/* Stylesheet */
 import "./rightDrawer.css";
 
 function RightDrawer() {
@@ -14,11 +16,11 @@ function RightDrawer() {
     return (
         <div>
             <Button
-                type="link"
-                size="large"
+                type='link'
+                size='large'
                 icon={
                     <AppstoreTwoTone
-                        twoToneColor="#cc5333"
+                        twoToneColor='#cc5333'
                         style={{
                             fontSize: "40px",
                         }}
@@ -33,7 +35,7 @@ function RightDrawer() {
                 }}
             />
             <Drawer
-                placement="right"
+                placement='right'
                 closeIcon={
                     <CloseCircleFilled
                         style={{ color: "#fff", fontSize: "2em" }}
@@ -49,17 +51,17 @@ function RightDrawer() {
                     justifyContent: "center",
                 }}
             >
-                <div className="drawer-links">
-                    <NavLink to="/" className="nav_link">
+                <div className='drawer-links'>
+                    <NavLink to='/' className='nav_link'>
                         Home
                     </NavLink>
-                    <NavLink to="/bonelli" className="nav_link">
+                    <NavLink to='/bonelli' className='nav_link'>
                         Bonelli
                     </NavLink>
-                    <NavLink to="/marvel" className="nav_link">
+                    <NavLink to='/marvel' className='nav_link'>
                         Marvel
                     </NavLink>
-                    <NavLink to="/dc" className="nav_link">
+                    <NavLink to='/dc' className='nav_link'>
                         DC Comics
                     </NavLink>
                 </div>

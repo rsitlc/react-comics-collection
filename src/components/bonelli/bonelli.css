@@ -1,0 +1,16 @@
+.bonelli-slider {
+    height: 80vh;
+}
+
+.awssld__content > img,
+.awssld__content > video {
+    object-fit: fill !important;
+}
+
+.bonelli-title {
+    margin: 0;
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
