@@ -23,10 +23,16 @@
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
-    border-bottom: unset;
+    color: unset !important;
+    border-bottom: unset !important;
 }
 
 .ant-menu-horizontal > .ant-menu-item,
 .ant-menu-horizontal > .ant-menu-submenu {
     border-bottom: unset;
+}
+
+.ant-menu-item:active,
+.ant-menu-submenu-title:active {
+    background: none !important;
 }

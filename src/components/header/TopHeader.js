@@ -20,7 +20,11 @@ function TopHeader() {
                     <div className='logo' />
                     <Menu
                         mode='horizontal'
-                        style={{ backgroundColor: "#cc5333" }}
+                        style={{
+                            backgroundColor: "#cc5333",
+                            height: "inherit",
+                            borderBottom: 0,
+                        }}
                     >
                         <Menu.Item key='1'>
                             <Link to='/' style={{ color: "#fff" }}>

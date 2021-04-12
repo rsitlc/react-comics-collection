@@ -1,10 +1,10 @@
 .bonelli-slider {
-    height: 80vh;
+    height: 100vh;
 }
 
 .awssld__content > img,
 .awssld__content > video {
-    object-fit: fill !important;
+    object-fit: cover !important;
 }
 
 .bonelli-title {
