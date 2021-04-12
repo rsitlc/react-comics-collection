@@ -15,6 +15,7 @@ import Home from "./components/main-sections/Home";
 /* Stylesheets */
 import "./App.css";
 import "antd/dist/antd.css";
+import { BonelliProvider } from "./contexts/BonelliContext";
 
 function App() {
     return (
@@ -23,7 +24,11 @@ function App() {
                 <Redirect to='/' />
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route exact path='/bonelli' component={Bonelli} />
+                    <Route exact path='/bonelli'>
+                        <BonelliProvider>
+                            <Bonelli />
+                        </BonelliProvider>
+                    </Route>
                     <Route exact path='/marvel' component={Marvel} />
                     <Route exact path='/dc' component={DcComics} />
                 </Switch>

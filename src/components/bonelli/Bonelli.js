@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BonelliContext } from "../../contexts/BonelliContext";
 import { Row, Col, Card } from "antd";
 import "./bonelli.css";
 import TopHeader from "../header/TopHeader";
@@ -11,6 +12,8 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const { Meta } = Card;
 
 function Bonelli() {
+    const personaggi = useContext(BonelliContext);
+
     return (
         <div>
             <TopHeader />
@@ -54,86 +57,41 @@ function Bonelli() {
                     </AutoplaySlider>
                 </Col>
             </Row>
-            <Row style={{ margin: "50px 0" }}>
-                <Col xs={{ span: 20, offset: 2 }} md={{ span: 6, offset: 1 }}>
-                    <Card
-                        hoverable
-                        style={{ width: "100%", marginBottom: 20 }}
-                        cover={
-                            <img
-                                alt='example'
-                                src='https://i.imgur.com/Ld2OLhU.jpg'
-                                style={{
-                                    width: "100%",
-                                    height: "800px",
-                                    objectFit: "cover",
-                                }}
-                            />
-                        }
-                    >
-                        <Meta
-                            description='Tex'
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: "2em",
-                                fontWeight: "bold",
-                            }}
-                        />
-                    </Card>
-                </Col>
-                <Col xs={{ span: 20, offset: 2 }} md={{ span: 6, offset: 2 }}>
-                    <Card
-                        hoverable
-                        style={{ width: "100%", marginBottom: 20 }}
-                        cover={
-                            <img
-                                alt='example'
-                                src='https://i.imgur.com/ruYhtgm.jpg'
-                                style={{
-                                    width: "100%",
-                                    height: "800px",
-                                    objectFit: "cover",
-                                }}
-                            />
-                        }
-                    >
-                        <Meta
-                            description='Zagor'
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: "2em",
-                                fontWeight: "bold",
-                            }}
-                        />
-                    </Card>
-                </Col>
-                <Col xs={{ span: 20, offset: 2 }} md={{ span: 6, offset: 2 }}>
-                    {" "}
-                    <Card
-                        hoverable
-                        style={{ width: "100%", marginBottom: 20 }}
-                        cover={
-                            <img
-                                alt='example'
-                                src='https://i.imgur.com/zdjjqyF.jpg'
-                                style={{
-                                    width: "100%",
-                                    height: "800px",
-                                    objectFit: "cover",
-                                }}
-                            />
-                        }
-                    >
-                        <Meta
-                            description='Dylan Dog'
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: "2em",
-                                fontWeight: "bold",
-                            }}
-                        />
-                    </Card>
-                </Col>
+            <Row justify='center' style={{ margin: "50px 0" }}>
+                {personaggi.map((personaggio) => {
+                    return (
+                        <Col
+                            key={personaggio.id}
+                            xs={{ span: 22 }}
+                            md={{ span: 6, offset: 1 }}
+                        >
+                            <Card
+                                hoverable
+                                style={{ width: "100%", marginBottom: 20 }}
+                                cover={
+                                    <img
+                                        alt='example'
+                                        src={personaggio.img}
+                                        style={{
+                                            width: "100%",
+                                            height: "800px",
+                                            objectFit: "cover",
+                                        }}
+                                    />
+                                }
+                            >
+                                <Meta
+                                    description={personaggio.name}
+                                    style={{
+                                        textTransform: "uppercase",
+                                        fontSize: "2em",
+                                        fontWeight: "bold",
+                                    }}
+                                />
+                            </Card>
+                        </Col>
+                    );
+                })}
             </Row>
         </div>
     );

@@ -3,7 +3,7 @@ import React, { useState, useEffect, createContext } from "react";
 export const BonelliContext = createContext();
 
 export const BonelliProvider = ({ children }) => {
-    const [personaggio, setPersonaggio] = useState([]);
+    const [personaggi, setPersonaggi] = useState([]);
 
     useEffect(() => {
         const url = "https://api.npoint.io/ca7a3c0362cf392fc490/bonelli";
@@ -14,10 +14,10 @@ export const BonelliProvider = ({ children }) => {
             },
         })
             .then((res) => res.json())
-            .then((res) => setPersonaggio(res));
+            .then((res) => setPersonaggi(res));
     }, []);
     return (
-        <BonelliContext.Provider value={personaggio}>
+        <BonelliContext.Provider value={personaggi}>
             {children}
         </BonelliContext.Provider>
     );
